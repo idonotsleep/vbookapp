@@ -1,0 +1,63 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>IC Number</th>
+      <th>Job Title</th>
+      <th>Department</th>
+  </tr>
+  </thead>
+  <tr  *ngFor="let employee of employees" [attr.id]="employee.name" >
+    <td>{{employee.id}}</td>
+    <td>{{employee.name|uppercase}}</td>
+    <td>{{employee.ic_number}}</td>
+    <td>{{employee.age}}</td>
+    <td>{{employee.job_title}}</td>
+    <td>{{employee.department}}</td>
+    <td> <button (click)="remove(employee.id)">Remove</button></td>
+  </tr>
+</table>
+
+<p>
+<button (click) = "load()" class= "btn btn-primary mr-3">Load Records</button> <button (click) = "show_form()" class= "btn btn-primary mr-3">Add Employee</button>
+</p>
+
+<form *ngIf="form" [formGroup]="personForm" (ngSubmit)="add()"  novalidate>
+  <div class="form-group">
+      <label for="name">Name   </label>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name">
+      <div *ngIf="submitted && personForm.get('name').errors?.minlength" class="text-danger">Name has to be at least 5 characters</div>
+    <p></p>
+      <label for="ic_number">IC Number </label>
+      <input type="text" class="form-control" id="ic_number" name="ic_number" formControlName="ic_number">
+      <div *ngIf="submitted && personForm.get('ic_number').errors?.required" class="text-danger">IC number is a required field</div>
+      <div *ngIf="submitted && personForm.get('ic_number').errors?.pattern" class="text-danger">IC Number has to start with S, followed by 7 digits and end with an alphabet</div>
+    <p></p>
+    <p></p>
+      <label for="age">Age </label>
+      <input type="text" class="form-control" id="age" name="age" formControlName="age">
+      <div *ngIf="submitted && personForm.get('age').errors?.required" class="text-danger">Age is a required field</div>
+    <p></p>
+      <label for="job_title">Job Title </label>
+      <input type="text" class="form-control" id="job_title" name="job_title" formControlName="job_title">
+      <div *ngIf="submitted && personForm.get('job_title').errors?.required" class="text-danger">Job title is a required field</div>
+    <p></p>
+      <label for="department">Department </label>
+      <input type="text" class="form-control" id="department" name="department" formControlName="department">
+      <div *ngIf="submitted && personForm.get('department').errors?.required" class="text-danger">Department is a required field</div>
+    <p></p>
+  </div>
+  <div class="btn-toolbar">
+    <button class= "btn btn-primary mr-3" type="submit">Submit</button>
+    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+  </div>
+</form>
+
+
+
+
+
+

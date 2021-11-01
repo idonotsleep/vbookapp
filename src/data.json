@@ -1,0 +1,36 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Sebastian",
+      "ic_number": "S73847584W",
+      "age": 23,
+      "job_title": "Software Engineer",
+      "department": "Frontend Engineering"
+    },
+    {
+      "id": 2,
+      "name": "Steve",
+      "ic_number": "S84758475H",
+      "age": 48,
+      "job_title": "Release Engineer",
+      "department": "Reliability Engineering"
+    },
+    {
+      "id": 3,
+      "name": "Ann",
+      "ic_number": "S73647583K",
+      "age": 35,
+      "job_title": "Marketing Manager",
+      "department": "Sales and Marketing"
+    },
+    {
+      "id": 4,
+      "name": "Ken Tan",
+      "ic_number": "S7332211A",
+      "age": "34",
+      "job_title": "Gym Instructor",
+      "department": "Fitness First"
+    }
+  ]
+}
