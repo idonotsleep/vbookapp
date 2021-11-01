@@ -24,6 +24,8 @@ export class PersonComponent implements OnInit {
       job_title: ['', [Validators.required]],
       department: ['', [Validators.required]]
     })
+
+    this.load()
   }
 
   //personService is injected
@@ -35,7 +37,19 @@ export class PersonComponent implements OnInit {
   personForm: any
 
   load() {
-    this.employees = this.personService.getPersons()
+    this.personService.getPersons()
+    .subscribe(
+      (response) => {
+        console.log('response received')
+        this.employees = response;
+      },
+      (error) => {
+        console.error('Request failed with error')
+        alert(error);
+      },
+      () => {
+        console.log('Request completed')
+      })
   }
 
   onReset() {
@@ -60,8 +74,7 @@ export class PersonComponent implements OnInit {
     this.personService.addPerson(person_input)
     .subscribe(
       (response) => {
-        console.log('response received')
-        this.employees.push(new Person(person_input.name, person_input.ic_number, person_input.age, person_input.job_title, person_input.department))
+        this.employees.push(new Person(response.id, response.name, response.ic_number, response.age, response.job_title, response.department))
       },
       (error) => {
         console.error('Request failed with error')
@@ -77,8 +90,7 @@ export class PersonComponent implements OnInit {
     this.personService.removePerson(id)
     .subscribe(
       (response) => {
-        console.log('response received')
-
+        console.log('person removed')
       },
       (error) => {
         console.error('Request failed with error')

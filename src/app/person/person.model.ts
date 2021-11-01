@@ -55,7 +55,8 @@ export class Person {
       this._department = department;
   }
 
-  public constructor(name: string, ic_number: string, age: number, job_title: string, department: string) {
+  public constructor(id: number, name: string, ic_number: string, age: number, job_title: string, department: string) {
+    this._id = id
     this._name = name
     this._ic_number = ic_number
     this._age = age
