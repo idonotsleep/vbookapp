@@ -62,6 +62,10 @@ export class PersonComponent implements OnInit {
     this.form = (this.form) ? false : true
   }
 
+  hide_form(){
+    this.form = false
+  }
+
   add() {
     // this is how to get the submitted parameters
     let person_input = this.personForm.value

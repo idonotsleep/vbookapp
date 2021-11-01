@@ -12,5 +12,5 @@ export class AppComponent {
   items = [];
   show = 1;
 
- 
+
 }

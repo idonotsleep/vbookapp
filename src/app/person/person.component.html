@@ -22,7 +22,7 @@
 </table>
 
 <p>
-<button (click) = "load()" class= "btn btn-primary mr-3">Load Records</button> <button (click) = "show_form()" class= "btn btn-primary mr-3">Add Employee</button>
+ <button (click) = "show_form()" class= "btn btn-primary mr-3">Add Employee</button> <button (click) = "hide_form()" class= "btn btn-primary mr-3">Cancel</button>
 </p>
 
 <form *ngIf="form" [formGroup]="personForm" (ngSubmit)="add()"  novalidate>
@@ -52,7 +52,7 @@
   </div>
   <div class="btn-toolbar">
     <button class= "btn btn-primary mr-3" type="submit">Submit</button>
-    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+    <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
   </div>
 </form>
 

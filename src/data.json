@@ -35,10 +35,10 @@
     {
       "id": 5,
       "name": "Rain Lew",
-      "ic_number": "S7332221A",
-      "age": "34",
-      "job_title": "Gym Instructor",
-      "department": "Fitness First"
+      "ic_number": "S7332211A",
+      "age": "33",
+      "job_title": "Lead Software Engineer",
+      "department": "DevOps Engineering"
     }
   ]
 }
