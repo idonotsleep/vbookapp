@@ -9,38 +9,10 @@ export class PersonService {
     baseURL: String = 'http://localhost:3000'
     persons: Person[] = []
 
-    constructor(private httpClient: HttpClient) {
-      this.httpGetPersons()
-    }
+    constructor(private httpClient: HttpClient) {}
 
-    public async fetchData(){
-      const data = await this.httpClient.get<Person[]>(this.baseURL + '/employees').toPromise();
-      console.log("Data: " + data);
-      this.persons = data
-      console.log(this.persons)
-    }
-
-    public httpGetPersons() {
-        this.httpClient.get<Person[]>(this.baseURL + '/employees')
-        .subscribe(
-          (response) => {
-            console.log('response received')
-            this.persons = response;
-            console.log('persons')
-            console.log(this.persons)
-          },
-          (error) => {
-            console.error('Request failed with error')
-            alert(error);
-          },
-          () => {
-            console.log('Request completed')
-          })
-
-    }
-
-    public getPersons(): Person[]  {
-      return this.persons;
+    public getPersons(): Observable<any> {
+      return this.httpClient.get<Person[]>(this.baseURL + '/employees')
     }
 
     public removePerson(id: number): Observable<any>   {

@@ -31,6 +31,14 @@
       "age": "34",
       "job_title": "Gym Instructor",
       "department": "Fitness First"
+    },
+    {
+      "id": 5,
+      "name": "Rain Lew",
+      "ic_number": "S7332221A",
+      "age": "34",
+      "job_title": "Gym Instructor",
+      "department": "Fitness First"
     }
   ]
 }
