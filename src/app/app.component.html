@@ -1,5 +1,13 @@
 
+<base href="/">
+
 <app-navigation></app-navigation>
+
+<ul>
+<li><a [routerLink]="['home']">Home</a></li>
+<li><a [routerLink]="['product']">Products</a></li>
+<li><a [routerLink]="['person']">Employee Records</a></li>
+</ul>
 
  <div *ngFor="let item of items">
   <p *ngIf="show">
@@ -7,4 +15,4 @@
   </p>
 </div>
 
-<app-person></app-person>
+<router-outlet></router-outlet>

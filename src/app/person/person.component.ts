@@ -25,6 +25,7 @@ export class PersonComponent implements OnInit {
       department: ['', [Validators.required]]
     })
 
+    // Retrieve all data immediately after the SPA is loaded
     this.load()
   }
 
@@ -33,7 +34,6 @@ export class PersonComponent implements OnInit {
 
   form: boolean = false
   submitted: boolean = false
-
   personForm: any
 
   load() {
